@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Product List</h1>
+    
+    <a href="#" routerLink="/ad-home/ad-product" class="btn btn-success">Create New Post</a>
+      
+    <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Unit</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Warehouse Rate</th>
+                <th>Distributor Rate</th>
+                <th>retailer Rate</th>
+                <th>Mrp Rate</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let post of posts">
+                <td>{{ post.product_id }}</td>
+                <td>{{ post.product_name }}</td>
+                <td>{{ post.product_unit}}</td>
+                <td>{{ post.product_brand }}</td>
+                <td>{{ post.product_quantity }}</td>
+                <td>{{ post.wirehouse_rate }}</td>
+                <td>{{ post.distributor_rate }}</td>
+                <td>{{ post.retail_rate }}</td>
+                <td>{{ post.mrp }}</td>
+             
+                <td>
+                  <a href="#" [routerLink]="['/post/', post.product_id, 'view']" class="btn btn-info">View</a>
+                  <a href="#" [routerLink]="['/post/', post.product_id, 'edit']" class="btn btn-primary">Edit</a>
+                  <button type="button" (click)="deletePost(post.product_id)" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+ </div>

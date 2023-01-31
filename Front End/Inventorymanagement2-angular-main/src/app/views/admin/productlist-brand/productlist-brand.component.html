@@ -1,0 +1,212 @@
+
+
+        <div style="background-color: white;">
+             <div   style="margin-left: 15px; margin-right: 15px; padding-top: 20px;" >       <!-- insted of container  main container-->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              
+              <a routerLink="/ad-home/product-list"><button class="btn btn-primary" type="button">  <i class="fa-solid fa-list me-2"></i> </button></a>
+            </div> 
+            
+            <div style="padding: 10px;" >     <!-- insted of container  1st grid-->
+            <br>
+              <div class="row">
+              
+                <!-- First Grid start --> 
+                <div class="col-md-3">
+                
+               
+              <h3 style=" text-align:center;">Brand List</h3>
+           
+                  
+               <br> 
+               <div  class="container" >
+                <div class="table-responsive  ">  
+                    <table class="table table-sm  table-responsive table-hover table-bordered">  
+                      <thead>  
+                        <tr>  
+                          
+                          <th> Name</th>  
+                      
+                          <th>Description</th>  
+                      
+                          <th>Products</th>  
+                        </tr>  
+                      </thead>  
+                      <tbody> 
+                         <tr *ngFor="let p of brnads" >
+                       
+                        <td>{{p.name}}</td>
+                        
+                        <td>{{p.description}}</td>
+                        
+                      
+                        
+                     <!--  <td> <button class="btn btn-info" (click)="editEmp(p)"  (click)="show()" >Edit</button></td> -->
+                        <td > <button class="btn  btn-sm btn-primary " style="margin-left: 10px;" (click)="viewproducts(p)">View</button></td>  
+                
+                       </tr> 
+                      </tbody>  
+                    </table>  
+                  </div>
+            <br><br>
+            
+               </div>   
+                  
+             
+                  
+                  
+                </div>
+                <!-- First Grid end -->  
+                
+                <!-- 2 nd grid start -->
+                <div class="col-md-9">
+
+
+                <!-- <h4 style="text-align:center;">Product List</h4> -->
+
+                <!-- 2 nd Content start -->
+                <br>
+
+  <div *ngIf="tableshow">
+    <h2 style="text-align:center;"><strong>{{brname}}</strong> Products List</h2>
+                <table class="table table-striped table-bordered border-info">
+                    <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Brand</th>
+                            <th>Quantity</th>
+                            <th>Warehouse Rate</th>
+                            <th>Distributor Rate</th>
+                            <th>retailer Rate</th>
+                            <th>Mrp Rate</th>
+                            <th width="50px">Action</th>   <!--250px silo-->
+                          </tr>
+                    </thead>
+                    <tbody>
+                          <tr *ngFor="let post of products2">
+                            <td>{{ post.product_id }}</td>
+                            <td>{{ post.product_name }}</td>
+                            <td>{{ post.product_unit}}</td>
+                            <td>{{ post.product_brand }}</td>
+                            <td>{{ post.product_quantity }}</td>
+                            <td>{{ post.wirehouse_rate }}</td>
+                            <td>{{ post.distributor_rate }}</td>
+                            <td>{{ post.retail_rate }}</td>
+                            <td>{{ post.mrp }}</td>
+                            <td > <button class="btn  btn-sm btn-primary">View</button></td> 
+                         
+                           <!-- <td>
+                               <a href="#" [routerLink]="['/post/', post.product_id, 'view']" class="btn btn-info">View</a>
+                              <a href="#" [routerLink]="['/post/', post.product_id, 'edit']" class="btn btn-primary">Edit</a>
+                              <button type="button" (click)="deletePost(post.product_id)" class="btn btn-danger">Delete</button> 
+                            </td>-->
+                          </tr>
+                    </tbody>
+                </table>
+  </div>
+
+
+  <!-- all products show starts-->
+
+
+  <div *ngIf="!tableshow">
+    <h2 style="text-align:center;"> All Product</h2>
+                <table class="table table-striped table-bordered border-info">
+                    <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Brand</th>
+                            <th>Quantity</th>
+                            <th>Warehouse Rate</th>
+                            <th>Distributor Rate</th>
+                            <th>retailer Rate</th>
+                            <th>Mrp Rate</th>
+                            <th width="50px">Action</th>   <!--250px silo-->
+                          </tr>
+                    </thead>
+                    <tbody>
+                          <tr *ngFor="let post of products">
+                            <td>{{ post.product_id }}</td>
+                            <td>{{ post.product_name }}</td>
+                            <td>{{ post.product_unit}}</td>
+                            <td>{{ post.product_brand }}</td>
+                            <td>{{ post.product_quantity }}</td>
+                            <td>{{ post.wirehouse_rate }}</td>
+                            <td>{{ post.distributor_rate }}</td>
+                            <td>{{ post.retail_rate }}</td>
+                            <td>{{ post.mrp }}</td>
+                            <td > <button class="btn  btn-sm btn-primary">View</button></td> 
+                         
+                           <!-- <td>
+                               <a href="#" [routerLink]="['/post/', post.product_id, 'view']" class="btn btn-info">View</a>
+                              <a href="#" [routerLink]="['/post/', post.product_id, 'edit']" class="btn btn-primary">Edit</a>
+                              <button type="button" (click)="deletePost(post.product_id)" class="btn btn-danger">Delete</button> 
+                            </td>-->
+                          </tr>
+                    </tbody>
+                </table>
+  </div>
+
+  <!--all products show end-->
+              <!-- 2 nd Content end -->
+
+
+           <br>
+            
+          <br>
+            
+                      
+              </div>
+            </div>
+            
+            
+            
+            </div>
+            </div>
+
+
+            <!-- list start-->
+<!-- 
+            <div Class="container">
+
+              <div class="col-md-12">  
+                <h2> Product Table</h2>  
+                <div class="table-responsive">  
+                  <table class="table">  
+                    <thead>  
+                      <tr>  
+                        <th>Id</th>  
+                        <th>Product Code</th>  
+                        <th>Name</th>  
+                        <th>Quantity</th>  
+                        <th>Price</th>  
+                        <th>Action</th>  
+                        <th>Action</th>  
+                      </tr>  
+                    </thead>  
+                    <tbody> 
+                     <tr *ngFor="let p of products" >
+                      <td>{{p.id}}</td>
+                      <td>{{p.product_code}}</td>
+                      <td>{{p.product_name}}</td>
+                      <td>{{p.product_quantity}}</td>
+                      <td>{{p.product_price}}</td>
+                      <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>
+                      <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>
+              
+                     </tr>
+                    </tbody>  
+                  </table>  
+                </div>  
+              </div>  
+              </div> -->
+            <!--List end-->
+            
+            </div>
+            
+
+

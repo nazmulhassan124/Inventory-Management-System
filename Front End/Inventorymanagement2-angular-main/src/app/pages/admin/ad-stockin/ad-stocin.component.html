@@ -1,0 +1,95 @@
+<div  class='container'>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              
+    <a  routerLink="/ad-home/stockin-invoice"><button class="btn btn-primary" type="button">  <i class="fa-solid fa-list me-2"></i> </button></a>
+  </div>
+   
+ <h3 style="text-align:center ;background-color:DodgerBlue; padding:2px; color: black;">Stock In</h3><br>
+
+ <!-- dropdown-->
+<form >
+
+ <div class="row g-3">
+   
+    <div class="col-sm-2">
+      <select  class="form-select"  >
+        <option>Brand Select</option>
+        <option> Walton </option>
+        <option>Singer</option>
+      </select>
+
+    </div>
+    <div class="col-sm-2">
+      <!-- <button (click)="abcd()" > ABC </button> -->
+
+      <select  class="form-select"    (change)="abcd($event)" >
+        <option >Select Product</option>
+        <option *ngFor="let post of posts"   [value]="post.product_id"> {{ post.product_name }}</option>
+      </select>
+
+    </div>
+    <div class="col-sm-2">
+   
+      
+     <select  class="form-select"  >
+        <option>Supplier Select</option>
+        <option>Supplier one </option>
+        <option>Supplier two</option>
+      </select>
+    </div>
+    <div class="col-sm-1">
+      
+        <!-- <input type="text" class="form-control" > -->
+      </div>
+      <div class="col-sm-2">
+         
+            <!-- <input type="text" class="form-control" > -->
+          </div>
+          <div class="col-sm-2">
+             
+                <input type="text" class="form-control" placeholder="18/01/23">
+              </div>
+  </div><br><br>
+<!--dropdown end-->
+ <div class="row g-3">
+   
+  <div class="col-sm-2">
+  <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Product Name</p>
+    <input type="text" class="form-control"  value="{{abc}}"  >
+    <!-- <div>{{abc}}</div> -->
+  </div>
+  <div class="col-sm-2">
+     <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Brand</p>
+    <input type="text" class="form-control"  value="{{abc3}}" >
+  </div>
+  <div class="col-sm-2">
+  <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Unit</p>
+    <input type="text" class="form-control" value="{{abc2}}">
+  </div>
+  <div class="col-sm-2">
+    <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Price</p>
+      <input type="text" class="form-control" >
+    </div>
+    <div class="col-sm-2">
+        <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Quantity</p>
+          <input type="text" class="form-control" >
+          <label style="text-align:justify;">Sub Total :</label><br>
+          <label>Discount :</label><br>
+          <label>Total :</label>
+        </div>
+        <div class="col-sm-2">
+            <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Total</p>
+              <input type="text" class="form-control" >
+              <input type="text" class="form-control" >
+              <input type="text" class="form-control" >
+            </div>
+</div>
+<br>
+
+<div class="d-grid gap-2">
+    
+    <button  routerLink="/ad-home/stockin-invoice" class="btn btn-primary" type="button">Save</button>
+   
+  </div>
+</form>
+</div><br>

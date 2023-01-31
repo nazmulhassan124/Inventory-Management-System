@@ -1,0 +1,51 @@
+<div  class='container'>
+    <br>
+   
+ <h3 style="text-align:center ;background-color:DodgerBlue; padding:2px; color:black"> Invoice</h3><br>
+ </div>
+
+ <div Class="container">
+
+    <div class="col-md-12">  
+     
+      <div class="table-responsive">  
+        <table class="table ">  
+          <thead>  
+            <tr>  
+              <th>Invoice Id</th>  
+              <th>Batch</th>  
+              <th>Product Name</th>  
+              <th>Unite</th>  
+              <th>Price</th> 
+              <th>Quantity</th> 
+              <th>Total</th> 
+            
+              
+              <th>Action</th>  
+            </tr>  
+          </thead>  
+          <tbody> 
+            <tr *ngFor="let p of products" >
+            <td>{{p.id}}</td>
+            <td>{{p.batch_id}}</td>
+            <td>{{p.product_name}}</td>
+            <td>{{p.product_unite}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.quantity}}</td>
+             <td>{{p.total}}</td>
+             
+          <!--  <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>  -->
+            <!-- <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>  -->
+           <td> <button class="btn btn-primary"  >Details</button></td>  
+           </tr>
+          </tbody>  
+        </table>  
+      </div>  
+    </div>  
+    </div>
+
+
+
+
+
+
