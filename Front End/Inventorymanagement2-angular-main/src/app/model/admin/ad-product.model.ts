@@ -14,7 +14,8 @@ export interface AdProduct{
 	distributor_rate:number;
 	retail_rate:number;
 	mrp:number;
-
+	product_category:string;
+	total_quantity:number;
  
 
 }

@@ -52,21 +52,33 @@ find(id:number): Observable<any> {
   )
 }
 
-
-
-update(id:number, post:AdProduct): Observable<any> {
+findNextValue() {
   
-  return this.httpClient.put(this.apiURL + '/update/' + id, JSON.stringify(post), this.httpOptions)
-
-  .pipe( 
+  return this.httpClient.get('http://localhost:8080/product/getNextValue' ).pipe(
     catchError(this.errorHandler)
   )
 }
 
-delete(id:number){
-  return this.httpClient.delete(this.apiURL + '/delete/' + id, this.httpOptions)
 
-  .pipe(
+
+update( post:AdProduct): Observable<any> {
+  
+  return this.httpClient.put(this.apiURL + '/update' , JSON.stringify(post), this.httpOptions).pipe( 
+    catchError(this.errorHandler)
+  )
+  
+}
+
+updateStock( id:number, stock:number ,newtotal:number): Observable<any> {
+  
+  return this.httpClient.put(this.apiURL + '/updateStock/'+id+ '?quantity='+stock +'&newtotal='+newtotal,  this.httpOptions).pipe( 
+    catchError(this.errorHandler)
+  )
+  
+}
+
+delete(id:number){
+  return this.httpClient.delete(this.apiURL + '/delete/' + id, this.httpOptions).pipe(
     catchError(this.errorHandler)
   )
 }

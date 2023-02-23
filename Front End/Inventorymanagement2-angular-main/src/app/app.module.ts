@@ -38,6 +38,23 @@ import { AdSubcategoryComponent } from './pages/admin/ad-subcategory/ad-subcateg
 import { AdBrandComponent } from './pages/admin/ad-brand/ad-brand.component';
 import { AdLoginreglistComponent } from './views/admin/ad-loginreglist/ad-loginreglist.component';
 import { ProductlistBrandComponent } from './views/admin/productlist-brand/productlist-brand.component';
+import { AdProducteditComponent } from './views/admin/ad-productedit/ad-productedit.component';
+import { AdStockinpendingComponent } from './pages/admin/ad-stockinpending/ad-stockinpending.component';
+import { AdSaleslistComponent } from './pages/admin/ad-saleslist/ad-saleslist.component';
+import { AdPaymentlistComponent } from './pages/admin/ad-paymentlist/ad-paymentlist.component';
+import { Login2Component } from './common/login2/login2.component';
+import { AdSingleproductviewComponent } from './views/admin/ad-singleproductview/ad-singleproductview.component';
+import { AdSaleinvoiceComponent } from './pages/admin/ad-saleinvoice/ad-saleinvoice.component';
+import { DiProductreceivingComponent } from './pages/distributor/di-productreceiving/di-productreceiving.component';
+import { DisStockininvoiceComponent } from './pages/distributor/dis-stockininvoice/dis-stockininvoice.component';
+import { DisReceivedstockComponent } from './pages/distributor/dis-receivedstock/dis-receivedstock.component';
+import { AdWastagentryComponent } from './pages/admin/ad-wastagentry/ad-wastagentry.component';
+import { DisProductstockComponent } from './pages/distributor/dis-productstock/dis-productstock.component';
+import { DisReturnstockComponent } from './pages/distributor/dis-returnstock/dis-returnstock.component';
+import { DisSaleComponent } from './pages/distributor/dis-sale/dis-sale.component';
+import { AdSalereturnComponent } from './pages/admin/ad-salereturn/ad-salereturn.component';
+
+
  
 
 
@@ -78,6 +95,23 @@ import { ProductlistBrandComponent } from './views/admin/productlist-brand/produ
     AdBrandComponent,
     AdLoginreglistComponent,
     ProductlistBrandComponent,
+    AdProducteditComponent,
+    AdStockinpendingComponent,
+    AdSaleslistComponent,
+    AdPaymentlistComponent,
+    Login2Component,
+    AdSingleproductviewComponent,
+    AdSaleinvoiceComponent,
+    DiProductreceivingComponent,
+    DisStockininvoiceComponent,
+    DisReceivedstockComponent,
+    AdWastagentryComponent,
+    DisProductstockComponent,
+    DisReturnstockComponent,
+    DisSaleComponent,
+    AdSalereturnComponent,
+   
+   
     
   ],
   imports: [

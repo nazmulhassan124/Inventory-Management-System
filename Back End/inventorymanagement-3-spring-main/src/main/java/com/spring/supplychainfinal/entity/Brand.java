@@ -32,9 +32,9 @@ public class Brand {
 	private String category;
 	private String subcategory;
 	
-	@ManyToMany
-	private Set<Product> products = new HashSet<>();
-	
+//	@ManyToMany
+//	private Set<Product> products = new HashSet<>();
+//	
 	
 	
 	

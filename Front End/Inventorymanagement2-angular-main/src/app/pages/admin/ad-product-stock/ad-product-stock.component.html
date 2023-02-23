@@ -19,42 +19,24 @@
         
          <th scope="col">Brand</th>
        
+           <th scope="col">Total Stock</th>
            <th scope="col">Available Stock</th>
-           <th scope="col">Unite</th>
+          
    
        </tr>
      </thead>
      
      <tbody>
             
-       <tr>
-        <td> 01 </td>
-         <td>Computer  </td>
-         <td>Hp</td>
-          <td id="qun" style="background-color:rgba(238, 32, 32, 0.533);color:rgb(24, 23, 23); text-align: center;">0 </td>
-         <td>Piece </td>   
+       <tr *ngFor="let p of products">
+        <td> {{p.product_id}} </td>
+         <td>{{p.product_name}}  </td>
+         <td>{{p.product_brand}}</td>
+         <td>{{p.total_quantity}} </td> 
+          <td id="qun" style="background-color:rgba(238, 32, 32, 0.218);color:rgb(24, 23, 23); text-align: center;">{{p.product_quantity}} </td>
+          
        </tr>
-       <tr>
-        <td> 02 </td>
-         <td>Laptop  </td>
-         <td>Dell</td>
-          <td id="qun" style="background-color:rgba(75, 243, 38, 0.415);color:rgb(15, 14, 14);text-align: center;">10 </td>
-         <td>Piece </td>   
-       </tr>
-       <tr>
-        <td> 03 </td>
-         <td>Monitor  </td>
-         <td>Acer</td>
-          <td id="qun" style="background-color:rgba(235, 255, 13, 0.641);color:rgb(10, 9, 9); text-align: center;">5 </td>
-         <td>Piece </td>   
-       </tr>
-       <tr>
-        <td> 04 </td>
-         <td>Computer  </td>
-         <td>Hp</td>
-          <td id="qun" style="background-color:rgb(238, 32, 32, 0.533);color:rgb(12, 12, 12); text-align: center;">0 </td>
-         <td>Piece </td>   
-       </tr>
+     
        
         
                   

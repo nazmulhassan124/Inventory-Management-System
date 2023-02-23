@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.supplychainfinal.entity.Product;
@@ -53,6 +54,14 @@ public class ProductController {
 		return productService.update(product);
 	}
 	
+	@PutMapping("/updateStock/{id}")
+	public Product updateStock (@PathVariable Long id, @RequestParam(value = "quantity") long quantity ,@RequestParam(value="newtotal") long newtotal) {
+		proRepo.updateStock(quantity,newtotal, id);
+		
+		return productService.getById(id);
+	}
+	
+	
 	@DeleteMapping("/delete/{id}")    //browser theke del korte gele @GetMapping dite hobe 
 	public String delete (@PathVariable Long id) {
 		 productService.delete(id);
@@ -66,6 +75,13 @@ public class ProductController {
 		
 		return productService.getAll();
 	}
+	
+	@GetMapping("/getNextValue")
+	public long nextValues () {
+		
+		return proRepo.getNextSeriesId();
+	}
+
 	
 	@GetMapping("/getproduct/{name}")
 	public List<Product> productgetByBrand ( @PathVariable String name) {

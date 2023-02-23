@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.supplychainfinal.entity.Supplier;
-
+import com.spring.supplychainfinal.repository.SupplierRepository;
 import com.spring.supplychainfinal.service.SupplierService;
 
 @RestController
@@ -24,6 +24,9 @@ public class SupplierControler {
 
 	@Autowired
 	SupplierService suppService;
+	
+	@Autowired
+	SupplierRepository supprepo;
 	
 	
 	
@@ -39,6 +42,13 @@ public class SupplierControler {
 	public Supplier getById (@PathVariable Long id) {
 		
 		return suppService.getById(id);
+	}
+	
+	
+	@GetMapping("/getsupplier/{name}")
+	public Supplier getByName (@PathVariable String name) {
+		
+		return supprepo.supplierdata(name);
 	}
 	
 	@PutMapping("/update")

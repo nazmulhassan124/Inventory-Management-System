@@ -25,7 +25,8 @@ export class ProductlistBrandComponent implements OnInit{
     this.getallBrands();
   this.getallProducts();
 
-  
+    
+
 
   }
   getallBrands(){
@@ -43,14 +44,21 @@ export class ProductlistBrandComponent implements OnInit{
 
   }
 
-  viewproducts(product: AdBrand){
+  viewproducts(brand: AdBrand){
 
-    this.brname=product.name;
+    this.brname=brand.name;
     console.log(this.brname);
    
     this.viewproducts2()
     this.tableshow=true;
   }
+
+allproducts (){
+
+  this.tableshow=false;
+}
+
+  
   viewproducts2(){
 
      this.productService.getByBrand(this.brname).subscribe((data:AdProduct[])=>{

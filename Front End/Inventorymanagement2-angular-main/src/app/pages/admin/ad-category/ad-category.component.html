@@ -3,7 +3,7 @@
     <div  class='container'>
     
 
-      <div *ngIf="!createform">
+      <div *ngIf="createform">
 
         <h2 style="text-align:center ;background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black;"> Add Category </h2><br>
       <form [formGroup]="addForm"  >
@@ -43,16 +43,16 @@
       </div>
       <div class="col">
       
-        <div class="mb-3 row">
-          <label for="inputPassword" class="col-sm-3 col-form-label"  >Brand</label>
+        <!-- <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"   >Brand</label>
           <div class="col-sm-9">
-            <select  class="form-select"  >
+            <select  class="form-select"   >
                 <option>Walton</option>
                 <option>Singer </option>
                 <option>Vison</option>
               </select>
           </div>
-        </div>
+        </div> -->
       
         </div>
     </div>
@@ -68,8 +68,8 @@
            <div class="col-sm-9">
            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <!-- <a href="/admin/supplier/create/"> <button class="btn btn-primary me-md-2" type="button">Refress</button></a> -->
-      <button  type="submit"  class="btn btn-success"  (click)= "addWarehouse()" *ngIf="btnvisibility"   >Save</button>  
-    <button class="btn btn-primary"  (click)="updateWarehouse()" *ngIf="!btnvisibility"  >Update</button>  
+      <button  type="submit"  class="btn btn-success"  (click)= "add()" *ngIf="btnvisibility"   >Save</button>  
+    <button class="btn btn-primary"  (click)="update()" *ngIf="!btnvisibility"  >Update</button>  
     </div>
     
         </div>
@@ -85,43 +85,43 @@
 
 <br>
 
-     <!-- <div Class="container">
+      <div Class="container">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary " (click)="show()"><i class="fa-solid fa-user-plus " ></i> Add</button>
 
       </div><br>
       <div class="col-md-12">  
-        <h3 style="text-align:center ;background-color:rgb(100, 160, 220); padding:2px;">Wirehouse List</h3><br> 
+        <h3 style="text-align:center ;background-color:rgb(100, 160, 220); padding:2px;">Categories List</h3><br> 
         <div class="table-responsive ">  
           <table class="table table-sm">  
             <thead>  
               <tr>  
                 <th>Id</th>  
                 <th> Name</th>  
-                <th>Wirehouse code</th>  
-                <th>Phone</th>    
-                <th>Address</th>      
+                <th> code</th>  
+                <th>Description</th>    
+                      
                 <th>Action</th>  
                 <th>Action</th>  
               </tr>  
             </thead>  
             <tbody> 
-              <tr *ngFor="let p of products" >
+              <tr *ngFor="let p of categories" >
               <td>{{p.id}}</td>
               <td>{{p.name}}</td>
               <td>{{p.code}}</td>
-              <td>{{p.mobile}}</td>
-              <td>{{p.address}}</td>
+              <td>{{p.description}}</td>
+             
               
              <td> <button class="btn btn-info" (click)="editEmp(p)"  (click)="show()" >Edit</button></td> 
-              <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td> 
+              <td> <button class="btn btn-danger" (click)="delete(p)">Delete</button></td> 
       
              </tr>
             </tbody>  
           </table>  
         </div>  
       </div>  
-      </div>  -->
+      </div>  
 
 
 

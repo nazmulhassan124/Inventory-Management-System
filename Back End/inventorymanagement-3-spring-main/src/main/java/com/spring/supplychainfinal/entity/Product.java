@@ -27,16 +27,22 @@ public class Product {
 	private String product_name;
 	private String product_unit;
 	private String product_brand;
-	private long product_quantity;
+	private long product_quantity;    //current 
 	private long purchase_rate;
 	private long wirehouse_rate;
 	private long distributor_rate;
 	private long retail_rate;
 	private long mrp;
 	
-	@ManyToMany
-	private Set<Brand> brands = new HashSet<>();
+	private String product_category;  
+	private long total_quantity;              // old and new purchase
 	
+	private Boolean status;					// for soft delete
+	
+	
+//	@ManyToMany
+//	private Set<Brand> brands = new HashSet<>();
+//	
 	
 	
 	
@@ -45,6 +51,18 @@ public class Product {
 	
 	public long getPurchase_rate() {
 		return purchase_rate;
+	}
+	public long getTotal_quantity() {
+		return total_quantity;
+	}
+	public void setTotal_quantity(long total_quantity) {
+		this.total_quantity = total_quantity;
+	}
+	public String getProduct_category() {
+		return product_category;
+	}
+	public void setProduct_category(String product_category) {
+		this.product_category = product_category;
 	}
 	public void setPurchase_rate(long purchase_rate) {
 		this.purchase_rate = purchase_rate;

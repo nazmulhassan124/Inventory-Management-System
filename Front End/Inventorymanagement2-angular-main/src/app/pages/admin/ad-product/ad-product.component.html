@@ -50,7 +50,7 @@
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-3 col-form-label"  >Unit</label>
                 <div class="col-sm-9">
-                   <input formControlName="product_unit" type="text" class="form-control form-control-sm"  >
+                   <input formControlName="product_unit" type="text" class="form-control form-control-sm" placeholder="Piece"  value="Piece">
                 </div>
               </div>
               </div>
@@ -70,6 +70,22 @@
                 </div>
               </div>
               </div>
+
+
+              <div class="row g-3">
+                <div class="col">
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label"  >Categories</label>
+                    <div class="col-sm-9">
+                       <select formControlName="product_category" class="form-select"  >
+                        <option   >Select</option>
+                          <option  *ngFor="let p of categorylist" >{{p.name}}</option>
+                        
+                        </select> 
+                    </div>
+                  </div>
+                </div>
+                </div>
               
             
               <div class="row g-3">
@@ -127,16 +143,26 @@
               </div>
               </div>
              
-               <!-- <div class="row g-3">
+                <div class="row g-3">
               <div class="col">
               <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-3 col-form-label"  ></label>
+                <label for="inputPassword" class="col-sm-3 col-form-label"  >Current Quantity</label>
                 <div class="col-sm-9">
                    <input formControlName="product_quantity" type="text" class="form-control form-control-sm"   value="0" >
                 </div>
               </div>
               </div>
-              </div>  -->
+              </div>  
+              <div class="row g-3">
+                <div class="col">
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-3 col-form-label"  >Total Quantity</label>
+                  <div class="col-sm-9">
+                     <input formControlName="total_quantity" type="text" class="form-control form-control-sm"   value="0" >
+                  </div>
+                </div>
+                </div>
+                </div> 
                
              
              

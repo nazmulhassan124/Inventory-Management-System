@@ -14,23 +14,38 @@ import { AdCustomerComponent } from './pages/admin/ad-customer/ad-customer.compo
 import { AdDashboardComponent } from './pages/admin/ad-dashboard/ad-dashboard.component';
 import { AdDistributorComponent } from './pages/admin/ad-distributor/ad-distributor.component';
 import { AdHomeComponent } from './pages/admin/ad-home/ad-home.component';
+import { AdPaymentlistComponent } from './pages/admin/ad-paymentlist/ad-paymentlist.component';
 import { AdProductStockComponent } from './pages/admin/ad-product-stock/ad-product-stock.component';
 import { AdProductComponent } from './pages/admin/ad-product/ad-product.component';
 import { AdReceivingComponent } from './pages/admin/ad-receiving/ad-receiving.component';
+import { AdSaleinvoiceComponent } from './pages/admin/ad-saleinvoice/ad-saleinvoice.component';
+import { AdSalereturnComponent } from './pages/admin/ad-salereturn/ad-salereturn.component';
 import { AdSalesReportComponent } from './pages/admin/ad-sales-report/ad-sales-report.component';
 import { AdSalesComponent } from './pages/admin/ad-sales/ad-sales.component';
+import { AdSaleslistComponent } from './pages/admin/ad-saleslist/ad-saleslist.component';
 import { AdStaffComponent } from './pages/admin/ad-staff/ad-staff.component';
 import { AdStockinInvoiceComponent } from './pages/admin/ad-stockin-invoice/ad-stockin-invoice.component';
 import { AdStocinComponent } from './pages/admin/ad-stockin/ad-stocin.component';
+import { AdStockinpendingComponent } from './pages/admin/ad-stockinpending/ad-stockinpending.component';
 import { AdSubcategoryComponent } from './pages/admin/ad-subcategory/ad-subcategory.component';
 import { AdSupplierComponent } from './pages/admin/ad-supplier/ad-supplier.component';
 import { AdWarehouseComponent } from './pages/admin/ad-warehouse/ad-warehouse.component';
+import { AdWastagentryComponent } from './pages/admin/ad-wastagentry/ad-wastagentry.component';
+import { DiProductreceivingComponent } from './pages/distributor/di-productreceiving/di-productreceiving.component';
 import { DisDashboardComponent } from './pages/distributor/dis-dashboard/dis-dashboard.component';
 import { DisHomeComponent } from './pages/distributor/dis-home/dis-home.component';
+import { DisProductstockComponent } from './pages/distributor/dis-productstock/dis-productstock.component';
+import { DisReceivedstockComponent } from './pages/distributor/dis-receivedstock/dis-receivedstock.component';
+import { DisReturnstockComponent } from './pages/distributor/dis-returnstock/dis-returnstock.component';
+import { DisSaleComponent } from './pages/distributor/dis-sale/dis-sale.component';
+import { DisStockininvoiceComponent } from './pages/distributor/dis-stockininvoice/dis-stockininvoice.component';
 import { WareDashboardComponent } from './pages/warehouse/ware-dashboard/ware-dashboard.component';
 import { WareHomeComponent } from './pages/warehouse/ware-home/ware-home.component';
 import { AdLoginreglistComponent } from './views/admin/ad-loginreglist/ad-loginreglist.component';
+import { AdProducteditComponent } from './views/admin/ad-productedit/ad-productedit.component';
 import { AdProductlistComponent } from './views/admin/ad-productlist/ad-productlist.component';
+
+import { AdSingleproductviewComponent } from './views/admin/ad-singleproductview/ad-singleproductview.component';
 import { ProductlistBrandComponent } from './views/admin/productlist-brand/productlist-brand.component';
 
 const routes: Routes = [ {
@@ -70,20 +85,35 @@ const routes: Routes = [ {
               {path:"ad-subcategory",component:AdSubcategoryComponent},
               {path:"login-reglist",component:AdLoginreglistComponent},
               {path:"productlist-brand",component:ProductlistBrandComponent},
+              {path:"post/:postId/product-edit",component:AdProducteditComponent},    
+              {path:"stock-pending",component:AdStockinpendingComponent},   
+              {path:"ad-saleslist",component:AdSaleslistComponent}, 
+              {path:"ad-paymentlist",component:AdPaymentlistComponent}, 
+              {path:":postId/view",component:AdSingleproductviewComponent},
+              {path:":postId/saleinvoice", component:AdSaleinvoiceComponent},
+              {path:"ad-wastageentry", component:AdWastagentryComponent},
+              {path:"ad-salereturn", component:AdSalereturnComponent},
+             
 
               {path:"**", component:NotFoundComponent}
              
             ]},
  { path: 'ware-home',  component: WareHomeComponent,
-    children :[
+     children :[
               { path: 'ware-dashboard', component:AdDashboardComponent  },
        
              
             ]},
-            { path: 'dis-home',  component: DisHomeComponent,
-            children :[
+ { path: 'dis-home',  component: DisHomeComponent,
+       children :[
                      {path:"" ,redirectTo:"dis-dashboard" , pathMatch:"full"},
                       { path: 'dis-dashboard', component:DisDashboardComponent  },
+                      {path:'dis-productreceiving', component:DiProductreceivingComponent},
+                      {path:':postId/saleinvoice' , component:DisStockininvoiceComponent},
+                      {path:'dis-received-stock', component:DisReceivedstockComponent},
+                      {path:'dis-productstock', component:DisProductstockComponent},
+                      {path:'dis-returnstock', component:DisReturnstockComponent},
+                      {path:'dis-sale', component:DisSaleComponent},
                       {path:"**", component:NotFoundComponent}
                       
                

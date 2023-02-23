@@ -8,6 +8,8 @@ import { catchError, throwError } from 'rxjs';
 })
 export class AdSupplierService {
 
+
+ 
  
 
   constructor(private http: HttpClient) { }
@@ -34,7 +36,9 @@ export class AdSupplierService {
     return this.http.delete<AdSupplier>(this.baseUrl + "/delete/" + id);  
   }  
   getById(id: number) {  
-    return this.http.get<AdSupplier>(this.baseUrl + "/get/" + id);  
+    return this.http.get<AdSupplier>(this.baseUrl + "/get/" + id).pipe(
+      catchError(this.errorHandler)
+    );  
 
   } 
 
@@ -42,6 +46,11 @@ export class AdSupplierService {
     return this.http.put(this.baseUrl + "/update", suppliert);  
   }  
 
+  getSupplierByName(selectedPost: String) {
+    return this.http.get<AdSupplier>(this.baseUrl + '/getsupplier/'+ selectedPost, this.httpOptions  )
+    .pipe(catchError(this.errorHandler))
+   
+  }
 
 
   errorHandler(error:any) {

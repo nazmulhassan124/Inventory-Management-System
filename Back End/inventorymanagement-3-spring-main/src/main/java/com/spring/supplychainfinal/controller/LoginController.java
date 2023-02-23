@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.supplychainfinal.dto.Login;
+import com.spring.supplychainfinal.entity.Distributor;
 import com.spring.supplychainfinal.entity.LoginRegistration;
+import com.spring.supplychainfinal.repository.DistributorRepository;
 import com.spring.supplychainfinal.repository.LoginRegRepository;
 
 @RestController
@@ -21,6 +23,9 @@ public class LoginController {
 	@Autowired
 	LoginRegRepository loginRegRepo;
 	
+	@Autowired
+	DistributorRepository disRepo;
+	
 	
 	@PostMapping("/login")
 	public LoginRegistration login (@RequestBody Login login ) {
@@ -30,6 +35,12 @@ public class LoginController {
 	}
 	
 	
+	@PostMapping("/loginDis")
+	public Distributor logindistributor (@RequestBody Login login ) {
+		
+		return disRepo.login(login.getName(), login.getPassword2());
+		
+	}
 	
 	
 	

@@ -19,6 +19,11 @@ public class Distributor {
 	private String address;
 	private String zone;
 	
+	private String password2;            // login password
+	private String email;
+	private String username;          // login user name 
+	private String usertype;          // distributor or others
+	private String photo;
 	
 	
 	public String getZone() {

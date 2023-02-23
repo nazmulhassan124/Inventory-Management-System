@@ -9,10 +9,13 @@
       <a  routerLink="ad-dashboard" class="dashboard-nav-item active"><i class="fas fa-home"></i>Dashboard </a>
       
         
-         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-notes-medical"></i>Purchase </a>
+         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-notes-medical"></i>Stocks </a>
           <div class='dashboard-nav-dropdown-menu'>
+            <a routerLink="productlist-brand" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock Report 1 </a>
+            <a routerLink="ad-product-stock" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock Report 2</a>
           <a routerLink="ad-stockin" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock In </a>
-           <a  class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock In Pending </a>
+          <a routerLink="ad-sales" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Stock Out</a>
+           <a routerLink="stock-pending" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock In Pending </a>
             <a routerLink="stockin-invoice" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Stock In Invoice</a>
           
           </div>
@@ -20,13 +23,14 @@
       
         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-notes-medical"></i>Products </a>
           <div class='dashboard-nav-dropdown-menu'>
-          <a routerLink="ad-product-stock" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock Report </a>
-           <a  class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Receiving </a>
-            <a routerLink="ad-sales" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Sales</a>
-            <a  class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Return Entry</a>
-             <a routerLink="ad-receiving" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Receiving List </a>
-           <a routerLink="ad-sales" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Sales List </a>
-            <a  class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Return List</a>
+          
+           <!-- <a  class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Receiving </a> -->
+            
+            <!-- <a  class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Return Entry</a> -->
+             <a routerLink="ad-receiving" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Received List </a>
+           <a routerLink="ad-sales" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Sales  </a>
+          
+            <a routerLink="ad-wastageentry" class="dashboard-nav-dropdown-item">  <i class="fa-solid fa-circle-plus me-2"></i>Wastage Entry</a> 
             <a  routerLink="ad-product" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Add Product</a>
       
           
@@ -34,7 +38,8 @@
         </div>
          <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i> Products List </a>
           <div class='dashboard-nav-dropdown-menu'>
-          <a  class="dashboard-nav-dropdown-item" routerLink="productlist-brand"> <i class="fa-solid fa-list me-2"></i>Product List</a>
+            <a  class="dashboard-nav-dropdown-item" routerLink="product-list"> <i class="fa-solid fa-list me-2"></i>Product List 1</a>
+          <a  class="dashboard-nav-dropdown-item" routerLink="productlist-brand"> <i class="fa-solid fa-list me-2"></i>Product List 2</a>
           <a  class="dashboard-nav-dropdown-item" routerLink="ad-category"> <i class="fa-solid fa-list me-2"></i>Category List</a>
           <a  class="dashboard-nav-dropdown-item" routerLink="ad-subcategory"> <i class="fa-solid fa-list me-2"></i>Sub Category List</a>
           <a  class="dashboard-nav-dropdown-item" routerLink="ad-brand"> <i class="fa-solid fa-list me-2"></i>Brand List</a>
@@ -43,11 +48,15 @@
         
         
         
-         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Sales Report </a>
+         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Sales  </a>
           <div class='dashboard-nav-dropdown-menu'>
-          <a routerLink="ad-sales-report" class="dashboard-nav-dropdown-item">Daily Sales</a>
-          <a  class="dashboard-nav-dropdown-item">Clint Wise</a>
-          <a  class="dashboard-nav-dropdown-item">Product Wise</a>
+            <a routerLink="ad-sales" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Sales  </a>
+            <a routerLink="ad-saleslist" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Sales List</a>
+            <a  class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Sales Return list</a>
+          <a routerLink="ad-sales-report" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Daily Sales</a>
+          
+          <a routerLink="ad-salereturn" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Sales Return</a>
+          <a routerLink="ad-saleslist" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Sales Invoice</a>
           </div>
         </div>
         
@@ -65,7 +74,8 @@
           </div>
         </div> -->
         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i> Payments </a>
-          <div class='dashboard-nav-dropdown-menu'><a  class="dashboard-nav-dropdown-item">All</a><a  class="dashboard-nav-dropdown-item">Recent</a>
+          <div    routerLink="ad-paymentlist"    class='dashboard-nav-dropdown-menu'><a  class="dashboard-nav-dropdown-item">All</a>
+            <a  class="dashboard-nav-dropdown-item">Recent</a>
           </div>
         </div>
           <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-user"></i>CRM </a>
@@ -118,7 +128,7 @@
       <header class='dashboard-toolbar'><a   class="menu-toggle"><i class="fas fa-bars"></i> </a>  
 
         <!-- nav bar manue start-->
-<!-- 
+
    	<nav class="navbar navbar-expand-lg navbar-light " style="margin-left: 18%;  background-color:#E5E7E9;" >
   <div class="container-fluid">
     <a class="navbar-brand" href="#"></a>
@@ -127,47 +137,62 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="productlist-brand" class="nav-link " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Main Stock </button></a>
+        </li>
       <li class="nav-item">
-          <a class="nav-link " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Product List</button></a>
+          <a routerLink="product-list"  class="nav-link " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Product List</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Category List</button></a>
+          <a routerLink="ad-category" class="nav-link  " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Category List</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="#"><button type="button" class="btn btn-outline-secondary btn-sm">Sales Report</button></a>
+          <a  routerLink="ad-saleslist" class="nav-link " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Sales Report</button></a>
+        </li>
+        
+        <li class="nav-item">
+          <a  routerLink="stockin-invoice" class="nav-link " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Invoice List</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="#"><button type="button" class="btn btn-outline-secondary btn-sm">Due Report</button></a>
+          <a  routerLink="ad-paymentlist" class="nav-link " aria-current="page" ><button type="button" class="btn btn-outline-secondary btn-sm">Expense List</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="#"><button type="button" class="btn btn-outline-secondary btn-sm">Total Deposit</button></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="#"><button type="button" class="btn btn-outline-secondary btn-sm">Expense List</button></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" >Link</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fas fa-cogs"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" >Action</a></li>
+            <li><a class="dropdown-item" >Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something</a></li>
+            <li><a class="dropdown-item" >Something</a></li>
           </ul>
         </li>
+
+        
+        
         
       </ul>
-      
      
     </div>
     
+    
   </div>
 
-</nav>     -->
+</nav>
+
+<div class="d-flex"  style="position: fixed; right: 40px; top: 20px;">
+  
+  <h6 class="nav-link  ">Nazmul Hassan</h6>
+  
+  <img src="assets/adminlogo.jpg" alt="Admin" style="width:40px">
+  
+
+
+  
+</div>     
 
 <!--navbar manue end-->
 
@@ -181,3 +206,8 @@
   
     </div>
 </div>
+
+
+<!-- Test Works -->
+
+

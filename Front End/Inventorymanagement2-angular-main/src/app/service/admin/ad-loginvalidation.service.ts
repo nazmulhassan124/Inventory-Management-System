@@ -34,6 +34,13 @@ export class AdLoginvalidationService {
 
 
   }
+  dislogin(disdata :AdLogin ){
+    return this.http.post(this.baseUrl + '/loginDis', JSON.stringify(disdata), this.httpOptions).pipe(
+      catchError(this.errorHandler)
+    )
+        
+ 
+  }
 
 
 

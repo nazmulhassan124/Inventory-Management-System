@@ -19,6 +19,7 @@ Productformlabel: string = 'Add Warehouse';
 
   addForm!:FormGroup;
   products !: AdDistributor[];
+  usertype:string= 'distributor';
 
   constructor(private formBuilder: FormBuilder,  private disService: AdDistributorService) { }
 
@@ -30,6 +31,11 @@ Productformlabel: string = 'Add Warehouse';
       mobile:[''],
       address:[''],
       zone:[''],
+      password2:[''],
+      email:[''],
+      username:[''],
+      usertype:['distributor'],
+      photo:['']
       
     })
 
