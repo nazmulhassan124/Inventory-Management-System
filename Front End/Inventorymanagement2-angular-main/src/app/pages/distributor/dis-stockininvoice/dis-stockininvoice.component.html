@@ -5,16 +5,18 @@
           <div class="row">
             
               <h6 style="color: black;">Company Name  :  <strong> NN Company Ltd</strong></h6>
-              <h6 style="color: black;">Address: Kakrail, Dhaka </h6>
-              <h6 style="color: black;">Phoen : 016838804864</h6>
+              <h6 style="color: black;">Distributor   : <strong> {{disname}} </strong></h6>
+              <h6 style="color: black;">Address       :<strong> {{disaddress}}</strong> </h6>
+              <h6 style="color: black;">Phoen         : <strong> {{disphone}} </strong></h6>
             
            
           </div> <br>
           <div class="row">
             <h6 style="background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black; padding: 10px;">BILL TO</h6>
-            <h6  style="color: black;">Company Name:  <strong> {{disname}} </strong></h6>
-            <h6 style="color: black;">Address: <strong>{{disaddress}}</strong>  </h6>
-            <h6 style="color: black;">Phoen : <strong> {{disphone}} </strong></h6>
+            <h6  style="color: black;">Customer Id :  <strong> {{billtoid}} </strong></h6>
+            <h6  style="color: black;">Customer Name:  <strong> {{billtoname}} </strong></h6>
+            <h6 style="color: black;">Address: <strong>{{billtoaddress}}</strong>  </h6>
+            <h6 style="color: black;">Phoen : <strong>{{billtomobile}}  </strong></h6>
            
           </div>
         </div>
@@ -64,7 +66,7 @@
                <td>{{p.product_name}}</td>
               <td>{{p.product_brand}}</td>
               
-             <td>{{p.unit_price}}</td>
+             <td>{{p.retail_rate}}</td>
              <td>{{p.quantity}}</td>
              <td> <strong>{{p.total}}  </strong></td> 
              

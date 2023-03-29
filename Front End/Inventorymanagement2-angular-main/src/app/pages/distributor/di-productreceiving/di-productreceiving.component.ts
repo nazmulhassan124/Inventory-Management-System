@@ -16,8 +16,10 @@ export class DiProductreceivingComponent implements OnInit{
   constructor( private route: ActivatedRoute,
     private saleDetailsService: AdSalesService,){}
 
+    uid:any = localStorage.getItem('uid');   // distributor id
+
   ngOnInit(): void {
-    this.allsales();
+    this.getAllbyStatusDid();
    
   }
  
@@ -30,6 +32,13 @@ export class DiProductreceivingComponent implements OnInit{
       this.salesList=data
     })
     
+  }
+
+  getAllbyStatusDid (){
+    const status:string= "SalePending"
+    this.saleDetailsService.getByStatusDid(status, this.uid).subscribe((data: AdSale[])=>{
+      this.salesList=data
+    })
   }
 
 }

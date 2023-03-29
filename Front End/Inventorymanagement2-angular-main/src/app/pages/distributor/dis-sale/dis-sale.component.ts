@@ -3,10 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AdBrand } from 'src/app/model/admin/ad-brand.model';
 import { AdSaledetails } from 'src/app/model/admin/ad-saledetails.model';
 import { AdSale } from 'src/app/model/admin/ad-sales.model';
+import { DisCustomer } from 'src/app/model/distributor/dis-customer.model';
 import { DisStock } from 'src/app/model/distributor/dis-stock.model';
 import { AdProductService } from 'src/app/service/admin/ad-product.service';
 import { AdSalesService } from 'src/app/service/admin/ad-sales.service';
 import { BrandService } from 'src/app/service/admin/brand.service';
+import { DisCustomerService } from 'src/app/service/distributor/dis-customer.service';
 import { DisStockService } from 'src/app/service/distributor/dis-stock.service';
 
 @Component({
@@ -22,6 +24,7 @@ constructor(
   private saleService: AdSalesService,
   private route: ActivatedRoute,
   private brandService: BrandService,
+  private disCustomerService: DisCustomerService,
   private router: Router
 ){}
 
@@ -32,6 +35,8 @@ salelist: AdSale[]= [];
 saledatas!: AdSale;
 brnads !: AdBrand[];   // brand list
 
+customerlist!:DisCustomer[]  // customer list
+
 date!:string;
 quantity!:number ;
 uid:any = localStorage.getItem('uid');   // distributor id
@@ -40,6 +45,7 @@ uid:any = localStorage.getItem('uid');   // distributor id
   ngOnInit(): void {
     this.nextVal ( )
     this.  getallBrands()
+    this.getallCustomer();
     
   }
 
@@ -48,6 +54,11 @@ uid:any = localStorage.getItem('uid');   // distributor id
       this.brnads = data;
     });
   }
+   getallCustomer(){
+    this.disCustomerService.getAll().subscribe((data: DisCustomer[])=>{
+      this.customerlist=data
+    })
+   }
 
   selectbrand: string = "";
 
@@ -77,7 +88,8 @@ uid:any = localStorage.getItem('uid');   // distributor id
       date: this.date,
       grand_total: this.grandTotalsss,
       distributor_id: this.uid,      
-      status: this.statusdata
+      status: this.statusdata,
+      customer_id: this.customerid
       // warehouse_id: ,
       // customer_id :,
       // sale_details_id :
@@ -198,6 +210,13 @@ uid:any = localStorage.getItem('uid');   // distributor id
 
   }
 
+  customerid!: number;
+  customerevent(event:any){
+    this.customerid = event.target.value;
+    console.log('customer id', this.customerid)
+
+
+  }
 
   removeItem(item: any) {
     const indexvalue: number = parseInt(item);

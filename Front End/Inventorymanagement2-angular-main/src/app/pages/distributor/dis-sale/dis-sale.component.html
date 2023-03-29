@@ -29,6 +29,13 @@
               </div>
              
               <div class="col-sm-2">
+                <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">  Customer List </p>
+          
+                <select  class="form-select"       (change)="customerevent($event)">
+                 <option> -Select -</option>
+                 <option   *ngFor="let d of customerlist"   [value]="d.id" >{{d.name}} [{{d.id}}]</option>
+                
+               </select>
                
           
               </div>

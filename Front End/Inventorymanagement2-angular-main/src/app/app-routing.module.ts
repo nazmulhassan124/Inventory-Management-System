@@ -32,12 +32,14 @@ import { AdSupplierComponent } from './pages/admin/ad-supplier/ad-supplier.compo
 import { AdWarehouseComponent } from './pages/admin/ad-warehouse/ad-warehouse.component';
 import { AdWastagentryComponent } from './pages/admin/ad-wastagentry/ad-wastagentry.component';
 import { DiProductreceivingComponent } from './pages/distributor/di-productreceiving/di-productreceiving.component';
+import { DisCustomerComponent } from './pages/distributor/dis-customer/dis-customer.component';
 import { DisDashboardComponent } from './pages/distributor/dis-dashboard/dis-dashboard.component';
 import { DisHomeComponent } from './pages/distributor/dis-home/dis-home.component';
 import { DisProductstockComponent } from './pages/distributor/dis-productstock/dis-productstock.component';
 import { DisReceivedstockComponent } from './pages/distributor/dis-receivedstock/dis-receivedstock.component';
 import { DisReturnstockComponent } from './pages/distributor/dis-returnstock/dis-returnstock.component';
 import { DisSaleComponent } from './pages/distributor/dis-sale/dis-sale.component';
+import { DisSalelistComponent } from './pages/distributor/dis-salelist/dis-salelist.component';
 import { DisStockininvoiceComponent } from './pages/distributor/dis-stockininvoice/dis-stockininvoice.component';
 import { WareDashboardComponent } from './pages/warehouse/ware-dashboard/ware-dashboard.component';
 import { WareHomeComponent } from './pages/warehouse/ware-home/ware-home.component';
@@ -114,6 +116,11 @@ const routes: Routes = [ {
                       {path:'dis-productstock', component:DisProductstockComponent},
                       {path:'dis-returnstock', component:DisReturnstockComponent},
                       {path:'dis-sale', component:DisSaleComponent},
+                      {path:'dis-customer', component:DisCustomerComponent},
+                      {path:'dis-salelist',component:DisSalelistComponent},
+
+
+                      
                       {path:"**", component:NotFoundComponent}
                       
                

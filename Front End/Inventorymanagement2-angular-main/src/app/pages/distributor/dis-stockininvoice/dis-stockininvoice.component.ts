@@ -4,11 +4,14 @@ import { AdDistributor } from 'src/app/model/admin/ad-distributor.model';
 import { AdProduct } from 'src/app/model/admin/ad-product.model';
 import { AdSaledetails } from 'src/app/model/admin/ad-saledetails.model';
 import { AdSale } from 'src/app/model/admin/ad-sales.model';
+import { DisCustomer } from 'src/app/model/distributor/dis-customer.model';
 import { DisStock } from 'src/app/model/distributor/dis-stock.model';
 import { AdDistributorService } from 'src/app/service/admin/ad-distributor.service';
 import { AdProductService } from 'src/app/service/admin/ad-product.service';
 import { AdSalesService } from 'src/app/service/admin/ad-sales.service';
+import { DisCustomerService } from 'src/app/service/distributor/dis-customer.service';
 import { DisStockService } from 'src/app/service/distributor/dis-stock.service';
+import { DisCustomerComponent } from '../dis-customer/dis-customer.component';
 
 @Component({
   selector: 'app-dis-stockininvoice',
@@ -21,7 +24,8 @@ export class DisStockininvoiceComponent implements OnInit {
     private saleDetailsService: AdSalesService,
     private distributorService: AdDistributorService,
     private producService: AdProductService,
-    private stockService: DisStockService
+    private stockService: DisStockService,
+    private customerService: DisCustomerService
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +34,8 @@ export class DisStockininvoiceComponent implements OnInit {
     // this.allsaledetails()
     this.salependig()
     // this.distributord()
+
+    this.salesdata ()
   }
 
   statusdata !: String;
@@ -45,6 +51,11 @@ export class DisStockininvoiceComponent implements OnInit {
   distrubutorid?: any;
   distributorStock!: DisStock
 
+  customerdata!: DisCustomer
+  saledata2!: AdSale;  // for customer information
+
+  
+
 
   print() {
     window.print()
@@ -52,6 +63,7 @@ export class DisStockininvoiceComponent implements OnInit {
 
 
   id!: number;
+  customerid:any =0
 
 
   salelistByid() {
@@ -71,6 +83,36 @@ export class DisStockininvoiceComponent implements OnInit {
 
   }
   grandTotalsss: number = 0;
+
+
+  
+salesdata (){
+  this.saleDetailsService.getSaleById( this.id).subscribe((data:AdSale)=>{
+this.saledata2= data
+this.customerid= data.customer_id
+
+this.customerdatas();
+  })
+}
+
+billtoid!: any;
+billtoname!: any;
+billtomobile!: any;
+billtoaddress!: any;
+
+customerdatas(){
+  if(this.customerid>0){
+    this.customerService.getById(this.customerid).subscribe((data:DisCustomer)=>{
+this.customerdata = data;
+
+this.billtoid= data.id
+this.billtoname= data.name
+this.billtomobile=data.mobile
+this.billtoaddress=data.address
+
+    })
+  } else{  }
+}
 
 
 

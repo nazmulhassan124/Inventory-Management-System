@@ -12,6 +12,8 @@ export class DisReceivedstockComponent implements OnInit{
   
   salesList!: AdSale[];
 
+  uid:any = localStorage.getItem('uid');   // distributor id
+
   constructor( private route: ActivatedRoute,
     private saleDetailsService: AdSalesService,){}
   
@@ -20,10 +22,10 @@ export class DisReceivedstockComponent implements OnInit{
     
   }
 
-  status:String= "SaleApproved"
+  status:string= "SaleApproved"
 
   allsales(){
-    this.saleDetailsService.getAllSalesByStatus(this.status).subscribe((data: AdSale[])=>{
+    this.saleDetailsService.getByStatusDid(this.status , this.uid).subscribe((data: AdSale[])=>{
       this.salesList=data
     })
     

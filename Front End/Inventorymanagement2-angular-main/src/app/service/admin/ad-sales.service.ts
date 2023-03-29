@@ -48,6 +48,14 @@ export class AdSalesService {
   }
 
 
+  getByStatusDid(status:string ,did:number) {  
+    return this.http.get<AdSale[]>(this.baseUrl2 + "/getAllByStatusDid"+'?status='+status+'&did='+did).pipe(
+      catchError(this.errorHandler)
+    );  
+
+  } 
+
+
   getAllbyId(id: number) {  
     return this.http.get<AdSaledetails[]>(this.baseUrl +"/getAllById/" + id);  
   }  
@@ -57,6 +65,10 @@ export class AdSalesService {
   }  
   getById(id: number) {  
     return this.http.get<AdSaledetails>(this.baseUrl2 + "/get/" + id);  
+
+  } 
+  getSaleById(id: number) {  
+    return this.http.get<AdSale>(this.baseUrl2 + "/get/" + id);  
 
   } 
 

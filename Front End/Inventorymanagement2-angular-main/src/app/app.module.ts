@@ -53,6 +53,9 @@ import { DisProductstockComponent } from './pages/distributor/dis-productstock/d
 import { DisReturnstockComponent } from './pages/distributor/dis-returnstock/dis-returnstock.component';
 import { DisSaleComponent } from './pages/distributor/dis-sale/dis-sale.component';
 import { AdSalereturnComponent } from './pages/admin/ad-salereturn/ad-salereturn.component';
+import { DisCustomerComponent } from './pages/distributor/dis-customer/dis-customer.component';
+import { DisSalelistComponent } from './pages/distributor/dis-salelist/dis-salelist.component';
+
 
 
  
@@ -110,6 +113,9 @@ import { AdSalereturnComponent } from './pages/admin/ad-salereturn/ad-salereturn
     DisReturnstockComponent,
     DisSaleComponent,
     AdSalereturnComponent,
+    DisCustomerComponent,
+    DisSalelistComponent,
+  
    
    
     
